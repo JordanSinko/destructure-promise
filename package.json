@@ -12,12 +12,12 @@
     "url": "git+https://github.com/JordanSinko/destructure-promise.git"
   },
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
     "test": "run-s test:format test:unit",
-    "test:format": "prettier-check --single-quote index.js __tests__/index.spec.js",
-    "test:unit": "nyc colortape __tests__/index.spec.js",
+    "test:format": "prettier-check --single-quote src/**/*.js",
+    "test:unit": "nyc colortape src/**/*.spec.js",
     "cover": "run-s test:unit cover:unit",
     "cover:unit": "nyc report --reporter=text-lcov > coverage.lcov"
   },
