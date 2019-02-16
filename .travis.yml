@@ -14,5 +14,5 @@ jobs:
         sonarcloud:
           organization: 'jordansinko-github'
       script:
-        - yarn cover
+        - npm run test:jest
         - sonar-scanner
