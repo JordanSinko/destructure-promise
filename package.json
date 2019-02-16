@@ -5,9 +5,7 @@
   "main": "dist/index.js",
   "module": "src/index.js",
   "scripts": {
-    "print": "printenv",
-    "test": "jest --coverage",
-    "mutate": "stryker run",
+    "test": "jest --coverage && stryker run",
     "analyze": "sonar-scanner -Dsonar.login=${SONAR_TOKEN}",
     "rollup": "rollup -c"
   },
