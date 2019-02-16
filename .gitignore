@@ -2,6 +2,8 @@
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Runtime data
 pids
@@ -17,20 +19,25 @@ coverage
 
 # nyc test coverage
 .nyc_output
-coverage.lcov
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
 
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
+# Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
 # Dependency directories
-node_modules
-jspm_packages
+node_modules/
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
 
 # Optional npm cache directory
 .npm
@@ -44,8 +51,35 @@ jspm_packages
 # Output of 'npm pack'
 *.tgz
 
-# VSCode settings
-.vscode
+# Yarn Integrity file
+.yarn-integrity
 
-# Sonar scanner
-.scannerwork
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Sonar Scanner files
+.scannerwork/
+
+dist/

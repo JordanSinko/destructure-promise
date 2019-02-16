@@ -1,23 +1,21 @@
-const test = require('tape');
-const destructure = require('..');
+import destructure from '..';
 
-test('destructure-promise handles resolved promises', assert => {
-  assert.plan(2);
-  const promiseFn = arg => new Promise(res => setTimeout(res, 0, arg));
-  const fn = destructure(promiseFn);
-  fn('test').then(({ error, response }) => {
-    assert.equals(error, null);
-    assert.equals(response, 'test');
-  });
+test('given destructure(); when the fn resolves; then it should return;', async () => {
+  const expected = 'Hello';
+  const task = () => Promise.resolve(expected);
+  const destructured = destructure(task);
+  const [error, actual] = await destructured();
+  expect(actual).toBe(expected);
+  expect(error).toBeUndefined();
+  expect(destructured).toHaveProperty('name', 'task');
 });
 
-test('destructure-promise handles rejected promises', assert => {
-  assert.plan(2);
-  const promiseFn = () =>
-    new Promise((_, rej) => setTimeout(rej, 0, new Error('This is an error')));
-  const fn = destructure(promiseFn);
-  fn('test').then(({ error, response }) => {
-    assert.equals(error.message, 'This is an error');
-    assert.equals(response, null);
-  });
+test('given destructure(); when the fn rejects; then it should return;', async () => {
+  const expected = new Error({ message: 'Some error occured' });
+  const task = () => Promise.reject(expected);
+  const destructured = destructure(task);
+  const [error, actual] = await destructured();
+  expect(actual).toBeUndefined();
+  expect(error).toHaveProperty('message', expected.message);
+  expect(destructured).toHaveProperty('name', 'task');
 });
