@@ -24,26 +24,20 @@ Takes a promise-based function and returns the destructuried function. The idea 
 
 ```js
 const destructure = require('destructure-promise');
-const resolveFn = arg => new Promise(res => setTimeout(res, 0, arg));
-const fn = destructure(resolveFn);
-
-// Works with Promise resolutions:
-fn('Hello World!').then(({ response }) => console.log(response)); // -> Hello World!
-
-const rejectFn = () => new Promise((_, rej) => setTimeout(rej, 0, new Error('This is an error!')));
-const fn = destructure(rejectFn);
-
-// Works with Promise rejections:
-fn('Hello World!').then(({ error }) => console.log(error.message)); // -> This is an error!
-
-// Works with async/await:
-const resolveFn = arg => new Promise(res => setTimeout(res, 0, arg));
-const fn = destructure(resolveFn);
 
 (async () => {
-  const { error, response } = await fn('Hello World!');
-  if (error != null) throw error;
-  console.log(response); // -> Hello World!
+  // Resolved values
+  {
+    const task = arg => Promise.resolve(arg);
+    const destructured = destructure(task);
+    const [, response] = await destructured('Hello world'); // 'Hello world'
+  }
+  // Resolved values
+  {
+    const task = () => Promise.reject({ message: 'Some error' });
+    const destructured = destructure(task);
+    const [error] = await destructured(); // { message: 'Some error' }
+  }
 })();
 ```
 
