@@ -2,8 +2,9 @@
 
 [![Travis branch](https://img.shields.io/travis/JordanSinko/destructure-promise/master.svg)](https://travis-ci.org/JordanSinko/destructure-promise)
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.jordansinko.destructure-promise&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.jordansinko.destructure-promise)
-![npm](https://img.shields.io/npm/dm/destructure-promise.svg)
-![npm](https://img.shields.io/npm/l/destructure-promise.svg)
+[![Sonarcloud Coverage](https://img.shields.io/sonar/https/sonarcloud.io/com.jordansinko.destructure-promise/coverage.svg)](https://sonarcloud.io/dashboard?id=com.jordansinko.destructure-promise)
+[![NPM Downloads](https://img.shields.io/npm/dm/destructure-promise.svg)](https://www.npmjs.com/package/destructure-promise)
+[![NPM License](https://img.shields.io/npm/l/destructure-promise.svg)](https://www.npmjs.com/package/destructure-promise)
 
 Make a promise-based function return a destructurifiable object.
 
@@ -29,8 +30,7 @@ const fn = destructure(resolveFn);
 // Works with Promise resolutions:
 fn('Hello World!').then(({ response }) => console.log(response)); // -> Hello World!
 
-const rejectFn = () =>
-  new Promise((_, rej) => setTimeout(rej, 0, new Error('This is an error!')));
+const rejectFn = () => new Promise((_, rej) => setTimeout(rej, 0, new Error('This is an error!')));
 const fn = destructure(rejectFn);
 
 // Works with Promise rejections:
