@@ -2,6 +2,8 @@
 
 [![Travis branch](https://img.shields.io/travis/JordanSinko/destructure-promise/master.svg)](https://travis-ci.org/JordanSinko/destructure-promise)
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.jordansinko.destructure-promise&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.jordansinko.destructure-promise)
+[![LGTM Quality](https://img.shields.io/lgtm/grade/javascript/g/JordanSinko/destructure-promise.svg?label=quality)](https://lgtm.com/projects/g/JordanSinko/destructure-promise/)
+[![LGTM Alerts](https://img.shields.io/lgtm/alerts/g/JordanSinko/destructure-promise.svg)](https://lgtm.com/projects/g/JordanSinko/destructure-promise/)
 [![Sonarcloud Coverage](https://img.shields.io/sonar/https/sonarcloud.io/com.jordansinko.destructure-promise/coverage.svg)](https://sonarcloud.io/dashboard?id=com.jordansinko.destructure-promise)
 [![NPM Downloads](https://img.shields.io/npm/dm/destructure-promise.svg)](https://www.npmjs.com/package/destructure-promise)
 [![NPM License](https://img.shields.io/npm/l/destructure-promise.svg)](https://www.npmjs.com/package/destructure-promise)

@@ -82,4 +82,7 @@ typings/
 # Sonar Scanner files
 .scannerwork/
 
+# Stryker Mutator files
+.stryker-tmp/
+
 dist/
